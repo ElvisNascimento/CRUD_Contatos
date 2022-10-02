@@ -8,28 +8,41 @@
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     </head>
-    <body class="container ">
-        <div class="d-flex align-items-center">
+
+    <body class="container bg-light">
+
+        <div class="col bg-light position-sticky;"style="position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1020;">
+            <div class="row align-items-center">
+        <div class="col-3 border">
             <div class="flex-shrink-0">
-              <img  style="width: 100pxs; height: 100px;" src="https://i.pinimg.com/originals/07/15/37/071537f20f9d05d96f9846e098d04c45.jpg" alt="imagem de meus contatos">
+              <img class="w-100" src="https://i.pinimg.com/originals/07/15/37/071537f20f9d05d96f9846e098d04c45.jpg" alt="imagem de meus contatos">
             </div>
-            <div class="flex-grow-1 ms-3">
-                <h1 class="mt-5">Meus Contatos</h1>
-             Esta é uma aplicação desenvolvida pra avalicão de CRUD, onde temos que desenvolver uma lista de contatos espero que essa esteja de acordo =)
-            </div>
-          </div>
-        <hr>
-        <div class="text-end mb-3">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Add Novo Contato
-            </button>
         </div>
-        <hr>
+        <div class="col-6 border">
+                <h1 class="mt-5">Meus Contatos</h1>
+        </div>
+        <div class="col-3 border">
+            <div class="text-center">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Add Novo Contato
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row border">
+        <span>Esta é uma aplicação desenvolvida pra avalicão de CRUD, onde temos que desenvolver uma lista de contatos, espero que essa esteja de acordo =)</span>
+    </div>
+    <hr>
+</div>
+        
         <div class="container" id="contatos">
                 <!--aqui vai o conteudo dos contatos-->
-        </div>
-        <!-- Modal -->
+            </div>
+            <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
@@ -63,7 +76,7 @@
                     <label  for="input_editar_contato">Nome Do Item</label>
                     <input class="form-control" type="text" onchange="" id="input_editar_contato">
                     <label  for="input_editar_telefone">telefone</label>
-                    <input class="form-control" type="text" onchange="" id="input_editar_telefone">
+                    <input class="form-control" type="number" onchange="" id="input_editar_telefone">
                     <label  for="input_editar_cidade">cidade</label>
                     <input class="form-control" type="text" onchange="" id="input_editar_cidade">
                     <div class="d-grid">

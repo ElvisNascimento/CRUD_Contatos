@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meus Contatos</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body class="container ">
+        <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <img  style="width: 100pxs; height: 100px;" src="https://i.pinimg.com/originals/07/15/37/071537f20f9d05d96f9846e098d04c45.jpg" alt="imagem de meus contatos">
+            </div>
+            <div class="flex-grow-1 ms-3">
+                <h1 class="mt-5">Meus Contatos</h1>
+             Esta é uma aplicação desenvolvida pra avalicão de CRUD, onde temos que desenvolver uma lista de contatos espero que essa esteja de acordo =)
+            </div>
+          </div>
+        <hr>
+        <div class="text-end mb-3">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add Novo Contato
+            </button>
+        </div>
+        <hr>
+        <div class="container" id="contatos">
+                <!--aqui vai o conteudo dos contatos-->
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Adicionar um novo contato</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form onsubmit="inserirNovocontato()" class="form" id="form_add">
+                    <div class="modal-body">
+                        <input class="form-control" type="text" minlength="1" id="input_contato" placeholder="Nome do contato"><br>
+                        <input class="form-control" type="number" min="1" id="input_telefone" placeholder="telefone"><br>
+                        <input class="form-control" type="text" min="1" id="input_cidade" placeholder="cidade"><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        <!-- ----------------------------------OFFCANVAS---------------------------------------------- -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasEditar" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Editar Contato</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <form id="editar" action="" onsubmit="atualizarContatoEditado()">
+                    <input type="hidden" id="input_editar_id">
+                    <label  for="input_editar_contato">Nome Do Item</label>
+                    <input class="form-control" type="text" onchange="" id="input_editar_contato">
+                    <label  for="input_editar_telefone">telefone</label>
+                    <input class="form-control" type="text" onchange="" id="input_editar_telefone">
+                    <label  for="input_editar_cidade">cidade</label>
+                    <input class="form-control" type="text" onchange="" id="input_editar_cidade">
+                    <div class="d-grid">
+                        <button class="btn btn-primary" >Enviar</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <script src="events.js"></script>
+    </body>
+</html>

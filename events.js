@@ -57,12 +57,11 @@ function atualizarLista() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                            
-                            </div>
+                        </div>  
                             </div>
                         </div>
-                    </div> 
+                    </div>
+                </div> 
             `;
         });
     })

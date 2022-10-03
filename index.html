@@ -21,27 +21,31 @@
               <img class="w-100" src="https://i.pinimg.com/originals/07/15/37/071537f20f9d05d96f9846e098d04c45.jpg" alt="imagem de meus contatos">
             </div>
         </div>
-        <div class="col-6 ">
+            <div class="col-6 ">
                 <h1 class="mt-5">Meus Contatos</h1>
-        </div>
-        <div class="col-3 ">
-            <div class="text-center">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Add Novo Contato
-                </button>
             </div>
         </div>
-    </div>
-    <div class="row ">
+    <div class="row">
         <span>Esta é uma aplicação desenvolvida pra avalicão de CRUD, onde temos que desenvolver uma lista de contatos, espero que essa esteja de acordo =)</span>
     </div>
     <hr>
+    <div class="row">
+        <!-- ------------- campo buscar  contato ---------------------- -->
+        <div class="col d-grid">
+            <input id="input_busca" onkeyup="filtrarContato()" type="text" class="form-control" placeholder="Buscar Contato ...">
+        </div>
+        <div class="col-5 text-end d-grid">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Add Novo Contato
+            </button>
+        </div>
+    </div>
+    <hr>
 </div>
-        
-        <div class="container" id="contatos">
+    <div class="container" id="contatos">
                 <!--aqui vai o conteudo dos contatos-->
-            </div>
+        </div>
             <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -87,6 +91,8 @@
           </div>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
         <script src="events.js"></script>
+        <script src="filtrar.js"></script>
     </body>
 </html>

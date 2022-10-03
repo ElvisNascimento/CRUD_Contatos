@@ -1,6 +1,15 @@
 const url ='https://633349f2573c03ab0b5b9af4.mockapi.io/Contatos/'
 
 
+function marcarTodos()
+{
+    let todos = document.querySelectorAll('[data-check="acao"]');
+
+    todos.forEach((cadaCheck)=>{
+        cadaCheck.checked = true;
+    })
+}
+
 async function excluirContato(id) {
     let resposta = confirm('Deseja excluir este contato?');
     if(resposta != true)
@@ -26,10 +35,14 @@ function atualizarLista() {
             `
             <div class="col-12 accordion accordion-flush mb-1" id="accordionFlushExample">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-heading${cadaContato.id}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${cadaContato.id}" aria-expanded="false" aria-controls="flush-collapse${cadaContato.id}"">
-                            <span hidden>${cadaContato.id}</span>${cadaContato.contato}
-                        </button>
+                <h2 class="accordion-header" id="flush-heading${cadaContato.id}">
+                
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${cadaContato.id}" aria-expanded="false" aria-controls="flush-collapse${cadaContato.id}"">
+                
+                <input data-check="acao" type="checkbox" class="me-3">
+                
+                <span hidden> ${cadaContato.id}</span>${cadaContato.contato}
+                </button>
                     </h2>
                         <div id="flush-collapse${cadaContato.id}"" class="accordion-collapse collapse" aria-labelledby="flush-heading${cadaContato.id}" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">

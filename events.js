@@ -1,13 +1,13 @@
 const url ='https://633349f2573c03ab0b5b9af4.mockapi.io/Contatos/'
 
-
 function marcarTodos()
 {
     let todos = document.querySelectorAll('[data-check="acao"]');
-
+   
     todos.forEach((cadaCheck)=>{
-        cadaCheck.checked = true;
+        cadaCheck.checked = check_all.checked;
     })
+    addButtonExcluir();
 }
 
 async function excluirContato(id) {
@@ -43,7 +43,7 @@ function atualizarLista() {
                 
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${cadaContato.id}" aria-expanded="false" aria-controls="flush-collapse${cadaContato.id}"">
                 
-                <input data-check="acao" type="checkbox" class="me-3">
+                <input onclick="addButtonExcluir()" value="${cadaContato.id}" data-check="acao" type="checkbox" class="me-3">
                 
                 <span hidden> ${cadaContato.id}</span>${cadaContato.contato}
                 </button>
@@ -60,7 +60,7 @@ function atualizarLista() {
                             <div class="col-6">
                                 <div class="row text-capitalize w-100">
                                     <span hidden>${cadaContato.id}</span>
-                                    <span id="nomeContato" >${cadaContato.contato}</span>
+                                    <span >${cadaContato.contato}</span>
                                     <span >${cadaContato.telefone}</span>
                                     <span >${cadaContato.cidade}</span>
                                 </div>

@@ -42,7 +42,14 @@
         </div>
     </div>
     <hr>
-    <input onclick="marcarTodos()" type="checkbox" name="" id=""> Marcar todos os contatos</input>
+    <div class="d-flex justify-content-between">
+        <div>
+            <input onclick="marcarTodos()" type="checkbox" name="" id="check_all"> Marcar todos os contatos</input>
+        </div>
+        <div>
+            <button id="btn_excluirTodos" onclick="excluirSelecionados()" class="d-none btn btn-danger">Excluir Todos Selecionados</button>
+        </div>
+    </div>
     <hr>
 </div>
     <div class="container" id="contatos">
@@ -93,8 +100,8 @@
           </div>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
         <script src="events.js"></script>
         <script src="filtrar.js"></script>
+        <script src="excluir.js"></script>
     </body>
 </html>

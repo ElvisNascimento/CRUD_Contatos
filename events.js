@@ -24,17 +24,21 @@ async function excluirContato(id) {
 }
 
 function atualizarLista() {
-    contatos.innerHTML ='';
+    contatos.innerHTML =`<div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+  </div>`;
     fetch(url)
         .then(function (resposta) {
             return resposta.json();
         })
         .then(function (lista) {
+            contatos.innerHTML ='';
         lista.forEach(function (cadaContato) {
             contatos.innerHTML += 
             `
             <div class="col-12 accordion accordion-flush mb-1" id="accordionFlushExample">
                 <div class="accordion-item">
+                
                 <h2 class="accordion-header" id="flush-heading${cadaContato.id}">
                 
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${cadaContato.id}" aria-expanded="false" aria-controls="flush-collapse${cadaContato.id}"">
@@ -56,7 +60,7 @@ function atualizarLista() {
                             <div class="col-6">
                                 <div class="row text-capitalize w-100">
                                     <span hidden>${cadaContato.id}</span>
-                                    <span >${cadaContato.contato}</span>
+                                    <span id="nomeContato" >${cadaContato.contato}</span>
                                     <span >${cadaContato.telefone}</span>
                                     <span >${cadaContato.cidade}</span>
                                 </div>

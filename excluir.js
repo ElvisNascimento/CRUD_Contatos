@@ -20,21 +20,17 @@ function addButtonExcluir()
         btn_excluirTodos.classList.add('d-none'); 
     }
 }
-async function excluirSelecionados(){
-    if(false === confirm('Tem Certeza?'))
+async function excluirSelecionados() {
+    let resposta = confirm('Deseja excluir este contato?');
+    if(resposta != true)
     {
         return;
+    }else{
+        await fetch(url + cadaCheck.checked, {
+            method: 'DELETE'
+        });
+        atualizarLista();
     }
-    console.log('excluir');
-    percorrerTodosOsChecks();
-    todosOsChecks.forEach((cadaCheck) => {
-        if(cadaCheck.checked === true){
-            fetch(url + checked.value,{
-                method: 'DELETE'
-            })
-        }
-    });
-    atualizarLista();
 }
 // //pegando otodos os inputs (checkboxes) que estao na tela;
 // 

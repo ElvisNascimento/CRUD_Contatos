@@ -1,4 +1,4 @@
-const url ='https://633349f2573c03ab0b5b9af4.mockapi.io/Contatos/'
+const url ='https://633349f2573c03ab0b5b9af4.mockapi.io/Contatos';
 
 function marcarTodos()
 {
@@ -9,7 +9,7 @@ function marcarTodos()
     })
     addButtonExcluir();
 }
-
+//?search=
 async function excluirContato(id) {
     let resposta = confirm('Deseja excluir este contato?');
     if(resposta != true)
@@ -23,11 +23,17 @@ async function excluirContato(id) {
     }
 }
 
-function atualizarLista() {
+function atualizarLista(busca) {
     contatos.innerHTML =`<div class="d-flex justify-content-center">
     <div class="spinner-border" role="status">
   </div>`;
-    fetch(url)
+  let variavel;
+  if(busca){
+        variavel = url + '?search='+ busca;
+  }else{
+        variavel = url;
+  }
+    fetch(variavel)
         .then(function (resposta) {
             return resposta.json();
         })

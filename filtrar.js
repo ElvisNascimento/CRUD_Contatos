@@ -1,9 +1,7 @@
 function filtrarContato(){
     let expressao = input_busca.value.toLowerCase(); // valor digitado pelo usuario
     atualizarLista(expressao);
-
 //     let linhas = contatos.getElementsByTagName('h2');
-
 //     for (let posicao in linhas ) {
 //         if(isNaN(posicao)){
 //             continue;
